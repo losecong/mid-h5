@@ -424,7 +424,14 @@
 <script>
       let music = document.getElementById('music');
       let audio = document.querySelector('#bgmedia');
-      
+      let player=new Player({
+        id:'mse',
+        url:'https://www.bilibili.com/video/BV1zp4y1a7vz/?vd_source=e3f358e43197f465af34423ef4023663',
+        width: '5rem',
+        height: '6rem',
+        playsinline: true, // 防止iphone 全屏
+        ignores: ['time']  // 去掉控制选项
+      })
       player.on('play',function(){
         player.play()
         audio.pause();
